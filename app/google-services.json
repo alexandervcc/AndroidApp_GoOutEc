@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "748396736238",
+    "project_id": "gooutec-1c348",
+    "storage_bucket": "gooutec-1c348.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748396736238:android:45112d634b2096b26acdff",
+        "android_client_info": {
+          "package_name": "com.example.appgooutec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748396736238-fbn8gcc02jrmuasehosi0uhflvcrtbvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbU9nIwzsmDLRvC6K_LfkG1ibUrGPlhSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748396736238-fbn8gcc02jrmuasehosi0uhflvcrtbvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
