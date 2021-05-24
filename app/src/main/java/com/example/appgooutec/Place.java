@@ -186,7 +186,7 @@ public class Place extends AppCompatActivity {
         fragmentTran.replace(R.id.rl_Fragments,frMap);
         fragmentoActual=frMap;
         fragmentTran.commit();
-//        getPermisos();
+       getPermisos();
 
     }
 

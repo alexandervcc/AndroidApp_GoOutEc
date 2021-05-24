@@ -2,8 +2,11 @@ package com.example.appgooutec.Fragments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,17 +30,23 @@ public class FragMap extends Fragment {
     private String nombreLugar;
     private LatLng location;
     private UiSettings uiSettings;
+    private boolean tienepermisos=false;
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         @Override
         public void onMapReady(GoogleMap googleMap) {
+            int permisosFineLocation= ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION);
+            tienepermisos=permisosFineLocation== PackageManager.PERMISSION_GRANTED;
+            googleMap.setMyLocationEnabled(true);
             googleMap.addMarker(new MarkerOptions().position(location).title(nombreLugar));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15f));
             uiSettings = googleMap.getUiSettings();
             uiSettings.setZoomControlsEnabled(true);
             uiSettings.setMyLocationButtonEnabled(true);
-        }
+
+
+                 }
     };
 
 
