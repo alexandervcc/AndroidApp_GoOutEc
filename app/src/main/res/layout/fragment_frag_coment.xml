@@ -9,9 +9,15 @@
 
     <TextView
         android:id="@+id/tv_fr_comment"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text=""
+        android:textSize="10dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

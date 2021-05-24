@@ -90,7 +90,6 @@ public class Place extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 crearFragmentoMap();
-
             }
         });
 
@@ -186,37 +185,14 @@ public class Place extends AppCompatActivity {
         fragmentTran.replace(R.id.rl_Fragments,frMap);
         fragmentoActual=frMap;
         fragmentTran.commit();
-       getPermisos();
+
 
     }
 
 
 
 
-    public void configMap(GoogleMap map){
-        if(map!=null){
-            int permisosFineLocation=ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-            tienepermisos=permisosFineLocation==PackageManager.PERMISSION_GRANTED;
-            if(tienepermisos){
-                map.setMyLocationEnabled(true);
-            }
-            UiSettings uiSettings = map.getUiSettings();
-            uiSettings.setZoomControlsEnabled(true);
-            uiSettings.setMyLocationButtonEnabled(true);
 
 
-        }
-    }
 
-    public void getPermisos(){
-        int permisosFineLocation=ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        tienepermisos=permisosFineLocation==PackageManager.PERMISSION_GRANTED;
-        String[] permisos= {Manifest.permission.ACCESS_FINE_LOCATION};
-        if(tienepermisos){
-            Log.i("fb-m","Tiene Permisos de Mapa");
-        }else {
-            ActivityCompat.requestPermissions(this, permisos ,1);
-        }
-
-    }
 }

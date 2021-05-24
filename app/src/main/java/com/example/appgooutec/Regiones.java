@@ -3,11 +3,15 @@ package com.example.appgooutec;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +31,7 @@ public class Regiones extends AppCompatActivity {
     private ArrayList<String> desc= new ArrayList<String>();
     private ArrayList<Drawable> regionImages=new ArrayList<Drawable>();
     private ImageView btnBack;
+    private boolean tienepermisos=false;
 
     RecyclerView recycler;
 
@@ -34,6 +39,16 @@ public class Regiones extends AppCompatActivity {
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Permisos de Mapa
+        int permisosFineLocation= ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        tienepermisos=permisosFineLocation== PackageManager.PERMISSION_GRANTED;
+        String[] permisos= {Manifest.permission.ACCESS_FINE_LOCATION};
+        if(tienepermisos){
+            Log.i("fb-m","Tiene Permisos de Mapa");
+        }else {
+            ActivityCompat.requestPermissions(this, permisos, 1);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regiones);
         Context con=getApplicationContext();

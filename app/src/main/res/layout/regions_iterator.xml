@@ -4,36 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ly_places"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
     android:background="@color/fondo"
     android:maxHeight="400dp"
     android:minHeight="400dp">
 
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_region"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_region"
-            android:layout_width="380dp"
-            android:layout_height="365dp"
-            android:clickable="true"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/roundImageView"
-
-            tools:srcCompat="@tools:sample/backgrounds/scenic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.533" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="385dp"
-        android:layout_height="171dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/round_border"
-
-        app:layout_constraintBottom_toBottomOf="@+id/iv_region"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent">
@@ -42,7 +47,9 @@
             android:id="@+id/tv_region"
             android:layout_width="351dp"
             android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:textColor="#FF9800"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -53,10 +60,14 @@
 
         <TextView
             android:id="@+id/tv_region_desc"
-            android:layout_width="345dp"
-            android:layout_height="120dp"
+            android:layout_width="330dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

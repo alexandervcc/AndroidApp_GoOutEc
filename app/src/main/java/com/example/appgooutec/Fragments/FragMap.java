@@ -2,6 +2,7 @@ package com.example.appgooutec.Fragments;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -36,14 +37,22 @@ public class FragMap extends Fragment {
 
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            int permisosFineLocation= ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION);
-            tienepermisos=permisosFineLocation== PackageManager.PERMISSION_GRANTED;
-            googleMap.setMyLocationEnabled(true);
-            googleMap.addMarker(new MarkerOptions().position(location).title(nombreLugar));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15f));
+            int permisosFineLocation=ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION);
+            tienepermisos=permisosFineLocation==PackageManager.PERMISSION_GRANTED;
+            String[] permisos= {Manifest.permission.ACCESS_FINE_LOCATION};
+            if(tienepermisos){
+                Log.i("fb-m","Tiene Permisos de Mapa");
+            }else {
+                ActivityCompat.requestPermissions(getActivity(), permisos ,1);
+            }
             uiSettings = googleMap.getUiSettings();
             uiSettings.setZoomControlsEnabled(true);
             uiSettings.setMyLocationButtonEnabled(true);
+            googleMap.setMyLocationEnabled(true);
+            googleMap.addMarker(new MarkerOptions().position(location).title(nombreLugar));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15f));
+
+
 
 
                  }
